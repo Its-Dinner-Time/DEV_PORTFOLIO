@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarStyled>
+    <NavbarStyled show-menu={isShow}>
       <div className="app__navbar-logo">
         <img src={images.logo} alt="logo" />
       </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={menuToggle(true)} />
 
-        <div data-show={isShow}>
+        <div>
           <HiX onClick={menuToggle(false)} />
 
           <ul>

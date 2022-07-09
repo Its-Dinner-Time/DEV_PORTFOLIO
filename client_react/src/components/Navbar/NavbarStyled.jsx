@@ -86,7 +86,6 @@ const Styled = styled.nav`
   }
 
   .app__navbar-menu {
-    /* display: ${(props) => (props.show ? 'block' : 'none')}; */
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -129,8 +128,9 @@ const Styled = styled.nav`
 
       box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
 
-      transform: translateX(40%);
-      opacity: 0;
+      transform: ${(props) =>
+        props['show-menu'] ? 'translateX(0%)' : 'translateX(40%)'};
+      opacity: ${(props) => (props['show-menu'] ? '1' : '0')};
       transition: all 0.35s ease-in-out;
 
       svg {
@@ -166,11 +166,6 @@ const Styled = styled.nav`
           }
         }
       }
-    }
-
-    div[data-show='true'] {
-      transform: translateX(0%);
-      opacity: 1;
     }
 
     @media screen and (max-width: 900px) {
