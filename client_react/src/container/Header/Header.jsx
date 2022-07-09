@@ -59,7 +59,7 @@ const Header = () => {
       <motion.div
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
-        className="app__header-circles"
+        className="circles"
       >
         {headerCirlceList.map((item, idx) => (
           <div className="circle-cmp app__flex" key={`circle-${idx}`}>
